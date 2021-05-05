@@ -22,14 +22,7 @@ public class ProductService {
         return productDb.list();
     }
 
-//    public Optional<Product> findProductById(String id) {
-//        for (Product product : productDb) {
-//            if (product.getId().equals(id)) {
-//                return Optional.of(product);
-//            }
-//        }
-//
-//        return Optional.empty();
-//
-//    }
+    public Optional<Product> findProductById(String id) {
+        return productDb.findProductById(id);
+    }
 }

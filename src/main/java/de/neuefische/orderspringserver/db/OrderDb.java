@@ -23,6 +23,7 @@ public class OrderDb {
 
     public Order removeOrder(Order order) {
         orderDb.remove(order);
+        return order;
     }
 
     public Order updateOrder(Order orderInDb, Order newOrder) {
@@ -36,7 +37,6 @@ public class OrderDb {
                 return Optional.of(order);
             }
         }
-
         return Optional.empty();
     }
 

@@ -10,7 +10,10 @@ import java.util.Optional;
 @Repository
 public class ProductDb {
 
-    private final List<Product> productDb = new ArrayList<>();
+    private final List<Product> productDb = new ArrayList<>(List.of(
+            new Product ("1", "ball"),
+            new Product ("22", "pen")
+    ));
 
     public List<Product> list() {
         return productDb;

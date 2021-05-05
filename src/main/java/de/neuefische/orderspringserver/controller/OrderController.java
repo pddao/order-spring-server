@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class OrderController {
     }
 
     @PutMapping("{id}")
-    public Order addOrder(@RequestBody Order newOrder, @PathVariable String id) {
+    public Order addOrder(@Valid @RequestBody Order newOrder, @PathVariable String id) {
         if (id.equals(newOrder.getId())) {
             if (orderService.findOrderById(id).isPresent()) {
                 return orderService.updateOrder(orderService.findOrderById(id).get(), newOrder);

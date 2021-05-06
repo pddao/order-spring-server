@@ -11,8 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class ProductServiceTest {
 
@@ -32,6 +31,7 @@ class ProductServiceTest {
 
         //Then
         assertThat(listOfProducts, containsInAnyOrder(new Product ("1", "ball"), new Product("22", "pen")));
+        verify(productDb).list();
     }
 
     @Test
@@ -44,5 +44,6 @@ class ProductServiceTest {
 
         //Then
         assertThat(productToFind.get(), is(new Product("1", "ball")));
+        verify(productDb).findProductById("1");
     }
 }

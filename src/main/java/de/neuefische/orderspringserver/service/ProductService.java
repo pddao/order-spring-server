@@ -4,6 +4,7 @@ import de.neuefische.orderspringserver.db.ProductDb;
 import de.neuefische.orderspringserver.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;

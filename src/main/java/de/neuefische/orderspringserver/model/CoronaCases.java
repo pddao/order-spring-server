@@ -8,16 +8,16 @@ public class CoronaCases {
 @JsonProperty ("Country")
     private String country;
 @JsonProperty ("Confirmed")
-    private String cases;
+    private String confirmed;
 @JsonProperty ("Date")
     private String date;
 
     public CoronaCases() {
     }
 
-    public CoronaCases(String country, String cases, String date) {
+    public CoronaCases(String country, String confirmed, String date) {
         this.country = country;
-        this.cases = cases;
+        this.confirmed = confirmed;
         this.date = date;
     }
 
@@ -29,12 +29,12 @@ public class CoronaCases {
         this.country = country;
     }
 
-    public String getCases() {
-        return cases;
+    public String getConfirmed() {
+        return confirmed;
     }
 
-    public void setCases(String cases) {
-        this.cases = cases;
+    public void setConfirmed(String confirmed) {
+        this.confirmed = confirmed;
     }
 
     public String getDate() {
@@ -50,19 +50,19 @@ public class CoronaCases {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CoronaCases that = (CoronaCases) o;
-        return Objects.equals(country, that.country) && Objects.equals(cases, that.cases) && Objects.equals(date, that.date);
+        return Objects.equals(country, that.country) && Objects.equals(confirmed, that.confirmed) && Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, cases, date);
+        return Objects.hash(country, confirmed, date);
     }
 
     @Override
     public String toString() {
         return "CoronaCases{" +
                 "country='" + country + '\'' +
-                ", cases='" + cases + '\'' +
+                ", cases='" + confirmed + '\'' +
                 ", date='" + date + '\'' +
                 '}';
     }

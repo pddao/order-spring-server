@@ -18,13 +18,12 @@ public class CoronaCasesApiService {
     public Optional<CoronaCases> getCoronaCasesByCountry(String country) {
         String jsonPostmanCountryUrl = jsonPostmanUrl + country;
 
-        ResponseEntity<CoronaCases> response = restTemplate.getForEntity(jsonPostmanCountryUrl, CoronaCases.class);
+        ResponseEntity<CoronaCases[]> response = restTemplate.getForEntity(jsonPostmanCountryUrl, CoronaCases[].class);
 
         if (response.getBody() != null) {
-            return Optional.of(response.getBody());
+            return Optional.of(response.getBody()[response.getBody().length-1]);
         }
         return Optional.empty();
-
 
     }
 }

@@ -1,12 +1,19 @@
 package de.neuefische.orderspringserver.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class CoronaCases {
-
+@JsonProperty ("Country")
     private String country;
+@JsonProperty ("Confirmed")
     private String cases;
+@JsonProperty ("Date")
     private String date;
+
+    public CoronaCases() {
+    }
 
     public CoronaCases(String country, String cases, String date) {
         this.country = country;
